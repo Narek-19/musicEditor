@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const TimeLine = styled.div`
     width:100%;
-    background-color: #20B2AA;
-    height: 20px;
+    height:30px;
+    background-color: #2e8cd6;
+`
+export const progress = styled.div`
+    width: ${(props)=>props.width}%;
+    height:100%;
+    background-color: #1d6aa6;
 `

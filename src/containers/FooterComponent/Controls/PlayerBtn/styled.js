@@ -8,4 +8,5 @@ export const PlayerBtn = styled.div`
     border:none;
     cursor: pointer;
     background-repeat: no-repeat;
+    background-color: black;
 `

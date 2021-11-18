@@ -18,15 +18,6 @@ const initialState = {
       coordinates: [120, 190],
       },
     },
-    {
-      id: 2,
-      start: 80,
-      end: 140,
-      textParams: {
-        text: "Some Text",
-        coordinates: [120, 190],
-      },
-    },
   ],
 };
 

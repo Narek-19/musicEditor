@@ -9,23 +9,20 @@ function Display(props){
     const [colorValue, setColorValue] = useState(color);
     const [timer, setTimer] = useState(null);
 
-const onChangeColor = (e) => {
-    setColorValue(e.target.value);
-    clearTimeout(timer);
-    setTimer(setTimeout(() => setColor(e.target.value), 1000));
-}
-
+// const onChangeColor = (e) => {
+//     setColorValue(e.target.value);
+//     clearTimeout(timer);
+//     setTimer(setTimeout(() => setColor(e.target.value), 1000));
+// }
     return (
-    <>
         <Styled.Display color= {color}>
-            <p>{color}</p>
+            {/* <p>{color}</p>
             <input 
                 type ="text"
                 value = {colorValue}
                 onChange = {onChangeColor}
-            />
+            /> */}
         </Styled.Display>
-    </>
     )
 }
 const mapStateToProps = (state) =>({
