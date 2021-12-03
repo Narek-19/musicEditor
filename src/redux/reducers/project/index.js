@@ -1,4 +1,5 @@
 import { setColor } from "./producer";
+import { setChunk } from "./producer";
 
 
 
@@ -23,6 +24,8 @@ const initialState = {
 
 const project = (state = initialState, action) => {
   switch (action.type) {
+    case "CHANGE_CHUNK":
+      return setChunk(state,action);
     case "CHANGE_COLOR":
       return setColor(state,action);
     default:

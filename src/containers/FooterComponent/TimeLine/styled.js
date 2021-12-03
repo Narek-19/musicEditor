@@ -6,7 +6,7 @@ export const TimeLine = styled.div`
     background-color: #2e8cd6;
 `
 export const progress = styled.div`
-    width: ${(props)=>props.width}%;
+    width: ${(props)=>props.progress}%;
     height:100%;
     background-color: #1d6aa6;
 `

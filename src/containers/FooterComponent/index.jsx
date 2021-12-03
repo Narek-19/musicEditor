@@ -9,6 +9,7 @@ import { getAudioChunks, getAudioUrl } from "../../redux/selectors";
 function Footer(props) {
   const { audioUrl } = props;
 
+
   const audioRef = useRef(null);
 
   return (

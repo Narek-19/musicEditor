@@ -1,20 +1,23 @@
-import React from "react";
+import React,{useRef,useState} from "react";
 import { connect } from "react-redux";
 import * as Styled from "./styled";
 import {getAudioChunks} from '../../../redux/selectors';
-import { ChunkTitle } from "./ChunkTitle";
 import { AddChunkBtn } from "./AddChunkBtn";
+import ChunkTitle from './ChunkTitle'
 
-
-function Subtitle(props){
+function SubtitleSideBar(props){
     const {audioChunks} = props;
-    
+    const [chunks,setChunks] = useState([
+      ...audioChunks,
+      
+    ]);
+
     return (
             <Styled.Subtitle>
               {
-                audioChunks.map((obj)=>{
+                chunks.map((chunk)=>{
                   return(
-                    <ChunkTitle obj = {obj}/>
+                    <ChunkTitle chunk= {chunk}/>
                   )
                 })
               }
@@ -26,4 +29,4 @@ function Subtitle(props){
 const mapStateToProps = (state) => ({
     audioChunks: getAudioChunks(state),
   });
-export default connect(mapStateToProps)(Subtitle);
+export default connect(mapStateToProps)(SubtitleSideBar);

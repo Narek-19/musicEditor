@@ -1,37 +1,35 @@
-import React, {useState,useRef} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import * as Styled from "./styled.js";
 
 function TimeLine(props) {
-  const [progress, setProgress] = useState(0);
+  const [progress,setProgress] = useState(0);
   const progressBar = useRef(null);
-
-
-
   const { audioMusic } = props;
 
-  const setNewPoint= (e) => {
+useEffect(()=>{
+  audioMusic.current.ontimeupdate = () => {
+    const start = audioMusic.current.currentTime
+    console.log(start);
+    setProgress(start);
+  };
+},[])
+    
+
+  const setNewPoint = (e) => {
     const marginLeft = progressBar.current.offsetLeft;
     const clientWidth = progressBar.current.clientWidth;
 
-    const start = e.clientX - marginLeft; 
+    const start = e.clientX - marginLeft;
     const total = clientWidth;
+    audioMusic.current.currentTime = (start * 100) / total;
+  };
 
 
-    audioMusic.current.currentTime = (start * 100 ) / total;
-    audioMusic.current.ontimeupdate = () => {
-      setProgress((start * 100 ) / total); 
-      
-    };
-  }
-  
 
-  return (
-      <Styled.TimeLine ref = {progressBar} onClick = {setNewPoint}
-        value={progress}
-      >
-        <Styled.progress width = {progress}></Styled.progress>
-
-      </Styled.TimeLine>
+  return(
+    <Styled.TimeLine ref={progressBar} onClick={setNewPoint}>
+      <Styled.progress  progress={progress}></Styled.progress>
+    </Styled.TimeLine>
   );
 }
 export default TimeLine;

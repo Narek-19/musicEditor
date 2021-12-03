@@ -1,13 +1,13 @@
 import * as Styled from "./styled";
 import Display from "./DisplayComponent";
 import LeftSideBar from "./LeftSideBar";
-import Subtitle from "./SubtitleSideBar";
+import SubtitleSideBar from "./SubtitleSideBar";
 function Header() {
   return (
       <Styled.Header>
         <LeftSideBar />
         <Display />
-        <Subtitle />
+        <SubtitleSideBar />
       </Styled.Header>
   );
 }

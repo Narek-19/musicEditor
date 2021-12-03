@@ -4,7 +4,7 @@ import TimeSet from "./TimeSet";
 function Controls(props){
     return(
         <Styled.Controls>
-            <PlayerBtn audio = {props.audio} setTime = {props.setTime} setDuration = {props.setDuration}/>
+            <PlayerBtn audio = {props.audio} setProgress = {props.setProgress}/>
             <TimeSet/>
         </Styled.Controls>
     )
